@@ -13,14 +13,14 @@ class AdminTareaController extends Controller
     public function index(){
       //  $tarea = DB::table("tarea")->get();
        //return view("admin.tarea.index");
-       $tareas = DB::table("tarea")
-                ->select("tarea.*", "materia.nombre as nombremateria")
-                ->join("materia", "materia.idMateria", "=", "tarea.idMateria")
+       $tareas = DB::table("tareas")
+                ->select("tareas.*", "materias.nombre as nombremateria")
+                ->join("materias", "materias.idMateria", "=", "tareas.idMateria")
                 ->get();
                return view("admin.tarea.index",["Tareas"=>$tareas]);
     }
     public function vistacrear(){
-         $materia = DB::table("materia")->get();
+         $materia = DB::table("materias")->get();
          //return view("admin.tarea.index");
        
                  return view("admin.tarea.crear",["materias"=>$materia]);
@@ -32,11 +32,11 @@ class AdminTareaController extends Controller
         // Validar la solicitud
 
         // Crear la tarea
-        DB::table("tarea")->insert([
-            "titulo" => $request->input("titulo"),
-            "descripcion" => $request->input("descripcion"),
-            "fechaentrega" => $request->input("fechaentrega"),
-            "idMateria" => $request->input("idMateria"),
+        DB::table("tareas")->insert([
+            "Titulo" => $request->input("titulo"),
+            "Descripcion" => $request->input("descripcion"),
+            "FechaEntrega" => $request->input("fechaentrega"),
+            "IdMateria" => $request->input("idMateria"),
         ]);
 
         // Mostrar un mensaje de éxito o redirigir a otra página
@@ -44,12 +44,12 @@ class AdminTareaController extends Controller
 
     }
 
+
     public function  vistaeditar($id){ 
-        $tarea = DB::table("tarea")->where("idTarea",$id)->first();
-        $materia = DB::table("materia")->get();
+        $tarea = DB::table("tareas")->where("IdTarea",$id)->first();
+        $materia = DB::table("materias")->get();
 
         return view("admin.tarea.editar",["tarea"=>$tarea  ,"materias"=>$materia]);
-
         
     }
 
@@ -57,11 +57,11 @@ class AdminTareaController extends Controller
            // Actualizar la tarea
        
            $id=$request->input("idTarea");
-           $actualizacion= DB::table("tarea")->where("idTarea", $id)->update([
-            "titulo" => $request->input("titulo") ,
-            "descripcion" => $request->input("descripcion"),
-            "fechaentrega" => $request->input("fechaentrega"),
-            "idMateria" => $request->input("idMateria"),
+           $actualizacion= DB::table("tareas")->where("IdTarea", $id)->update([
+            "Titulo" => $request->input("titulo") ,
+            "Descripcion" => $request->input("descripcion"),
+            "FechaEntrega" => $request->input("fechaentrega"),
+            "IdMateria" => $request->input("idMateria"),
         ]);
 
         if ($actualizacion) {

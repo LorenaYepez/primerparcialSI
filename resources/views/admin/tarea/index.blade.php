@@ -32,7 +32,7 @@
                   </tr>
                   @foreach ($Tareas as $tarea)
                   <tr>
-                    <td>{{ $tarea->idTarea }}</td>  
+                    <td>{{ $tarea->IdTarea }}</td>  
                     <td>{{ $tarea->Titulo }}</td>  
                     <td>{{ $tarea->Descripcion }}</td>
                     <td>{{ $tarea->FechaEntrega }}</td>
@@ -66,7 +66,7 @@
                       @endswitch
                   </td>
                     
-                    <td><a href="/admin/tarea/vistaeditar/{{ $tarea->idTarea}}" class="btn btn-secondary">Editar</a></td>
+                    <td><a href="/admin/tarea/vistaeditar/{{ $tarea->IdTarea}}" class="btn btn-secondary">Editar</a></td>
                   </tr>
                   @endforeach
                 </table>

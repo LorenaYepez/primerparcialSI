@@ -29,7 +29,7 @@
                 <div class="col-sm-12 col-md-7">
                   <select name="idMateria" class="form-control selectric">
                     @foreach ($materias as $materia)
-                      <option value="{{ $materia->idMateria }}" >{{ $materia->nombre }}</option>
+                      <option value="{{ $materia->IdMateria }}" >{{ $materia->Nombre }}</option>
                     @endforeach
                     
                   </select>

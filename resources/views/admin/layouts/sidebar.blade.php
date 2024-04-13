@@ -10,10 +10,10 @@
 
         <li class="menu-header">Dashboard</li>
         <li class="dropdown active">
-          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestionar Materia</span></a>
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestión Académica</span></a>
           <ul class="dropdown-menu">
             <li class=active><a class="nav-link" href="{{route('admin.tarea')}}">Tarea</a></li>
-            <li><a class="nav-link" href="index.html">Actividad</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Actividad</a></li>
           </ul>
         </li>
 
