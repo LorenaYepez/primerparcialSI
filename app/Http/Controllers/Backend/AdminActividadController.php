@@ -36,4 +36,31 @@ class AdminActividadController extends Controller
        return redirect()->route("admin.actividad")->with("success", "Tarea creada correctamente");
 
    }
+
+   public function  vistaeditar($id){ 
+    $actividad = DB::table("actividades")->where("IdActividad",$id)->first();
+    $materia = DB::table("materias")->get();
+
+    return view("admin.actividad.editar",["actividad"=>$actividad  ,"materias"=>$materia]);
+    
+}
+
+ public function editar(Request $request){
+       // Actualizar la tarea
+   
+       $id=$request->input("idActividad");
+       $actualizacion= DB::table("actividades")->where("IdActividad", $id)->update([
+        "Titulo" => $request->input("titulo"),
+        "Descripcion" => $request->input("descripcion"),
+        "FechaInicio" => $request->input("fechainicio"),
+        "FechaFin" => $request->input("fechafin"),
+        "IdMateria" => $request->input("idMateria"),
+    ]);
+
+    if ($actualizacion) {
+        return back()->with('success', 'Tarea editada correctamente');
+    } else {
+        return back()->withInput()->withErrors(['error' => 'No se pudo editar la tarea']);
+    }
+ }
 }

@@ -60,6 +60,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/actividad', [AdminActividadController::class, 'index'])->name('admin.actividad');
     Route::get('/admin/actividad/vistacrear', [AdminActividadController::class, 'vistacrear'])->name('admin.actividad.crear');
     Route::post('/admin/actividad/crear', [AdminActividadController::class, 'crear'])->name('admin.actividad.crear');
+    Route::get('/admin/actividad/vistaeditar/{id}', [AdminActividadController::class, 'vistaeditar'])->name('admin.actividad.crear');
+    Route::post('/admin/actividad/editar', [AdminActividadController::class, 'editar'])->name('admin.actividad.editar');
+
 
     Route::post('/admin/profile/update', [AdminProfileController::class, 'updateProfile'])->name('admin.profile.update');
     Route::post('/admin/profile/update/password', [AdminProfileController::class, 'updatePassword'])->name('admin.password.update');
