@@ -17,7 +17,7 @@
             <li><a class="nav-link" href="{{route('admin.actividad')}}">Actividades</a></li>
             <li><a class="nav-link" href="{{route('admin.publicacion')}}">Publicaciones</a></li>
             <li><a class="nav-link" href="{{route('admin.actividad')}}">Comentarios y Consultas</a></li>
-            <li><a class="nav-link" href="{{route('admin.actividad')}}">Calendario Escolar</a></li>
+            <li><a class="nav-link" href="admin.calendario">Calendario Escolar</a></li>
             <li><a class="nav-link" href="{{route('admin.actividad')}}">Comunicados y Avisos</a></li>
           </ul>
         </li>

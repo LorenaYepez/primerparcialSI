@@ -48,8 +48,7 @@ public function  vistaeditar($id){
 }
 
  public function editar(Request $request){
-       // Actualizar la tarea
-   
+       // Actualizar la publicacion
        $id=$request->input("idNotificacion");
        $actualizacion= DB::table("notificaciones")->where("IdNotificacion", $id)->update([
         "Titulo" => $request->input("titulo"),

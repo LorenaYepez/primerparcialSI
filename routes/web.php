@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\AdminComunicadoController;
 use App\Http\Controllers\Backend\AdminPublicacionController;
+use App\Http\Controllers\Backend\AdminEventosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -71,6 +72,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/publicacion/crear', [AdminPublicacionController::class, 'crear'])->name('admin.publicacion.crear');
     Route::get('/admin/publicacion/vistaeditar/{id}', [AdminPublicacionController::class, 'vistaeditar'])->name('admin.publicacion.crear');
     Route::post('/admin/publicacion/editar', [AdminPublicacionController::class, 'editar'])->name('admin.publicacion.editar');
+
+    
+    Route::get('/admin/calendario', [AdminEventosController::class, 'index'])->name('admin.calendario');
 
 
     Route::post('/admin/profile/update', [AdminProfileController::class, 'updateProfile'])->name('admin.profile.update');
