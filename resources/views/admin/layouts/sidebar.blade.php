@@ -9,14 +9,27 @@
       <ul class="sidebar-menu">
 
         <li class="menu-header">Dashboard</li>
+        
         <li class="dropdown active">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestión Académica</span></a>
           <ul class="dropdown-menu">
-            <li class=active><a class="nav-link" href="{{route('admin.tarea')}}">Tarea</a></li>
-            <li><a class="nav-link" href="{{route('admin.actividad')}}">Actividad</a></li>
+            <li class=active><a class="nav-link" href="{{route('admin.tarea')}}">Tareas</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Actividades</a></li>
+            <li><a class="nav-link" href="{{route('admin.publicacion')}}">Publicaciones</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Comentarios y Consultas</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Calendario Escolar</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Comunicados y Avisos</a></li>
           </ul>
         </li>
 
+        <li class="dropdown active">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Seguimientos y Reportes</span></a>
+          <ul class="dropdown-menu">
+            <li class=active><a class="nav-link" href="{{route('admin.tarea')}}">Comunicados</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Actividades</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Tareas</a></li>
+          </ul>
+        </li>
 
         <li class="menu-header">Starter</li>
         <li class="dropdown">
