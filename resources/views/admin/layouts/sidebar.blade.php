@@ -28,8 +28,8 @@
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Usuario</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="{{route('admin.calendario')}}">Listar</a></li>
-            <li><a class="nav-link" href="{{route('admin.calendario')}}">Crear</a></li>
+            <li><a class="nav-link" href="{{route('admin.usuario')}}">Listar</a></li>
+            <li><a class="nav-link" href="{{route('admin.usuario.crear')}}">Crear</a></li>
           </ul>
         </li> 
         @elseif (Auth::user()->role === 'profesor')
