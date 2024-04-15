@@ -42,6 +42,25 @@
             <li><a class="nav-link" href="{{route('admin.calendario')}}">Calendario Escolar</a></li>
           </ul>
         </li> 
+        @elseif (Auth::user()->role === 'padre')
+        <li class="dropdown active">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Actividad</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Listar</a></li>
+          </ul>
+        </li> 
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Calendario</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="{{route('admin.calendario')}}">Ver Calendario</a></li>
+          </ul>
+        </li> 
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Tarea</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="{{route('admin.tarea')}}">Ver Tareas</a></li>
+          </ul>
+        </li> 
         @endif
     @endauth
 

@@ -92,6 +92,11 @@ Route::middleware(['auth', 'role:profesor'])->group(function () {
     Route::get('/profesor/dashboard', [AdminController::class, 'dashboard'])->name('profesor.dashboard');
 });
 
+
+Route::middleware(['auth', 'role:padre'])->group(function () {
+    Route::get('/padre/dashboard', [AdminController::class, 'dashboard'])->name('padre.dashboard');
+});
+
 /*
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
