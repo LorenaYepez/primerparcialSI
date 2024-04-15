@@ -38,9 +38,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -72,22 +72,24 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/publicacion/crear', [AdminPublicacionController::class, 'crear'])->name('admin.publicacion.crear');
     Route::get('/admin/publicacion/vistaeditar/{id}', [AdminPublicacionController::class, 'vistaeditar'])->name('admin.publicacion.crear');
     Route::post('/admin/publicacion/editar', [AdminPublicacionController::class, 'editar'])->name('admin.publicacion.editar');
-
+    
     
     Route::get('/admin/calendario', [AdminEventosController::class, 'index'])->name('admin.calendario');
+    Route::post('/admin/calendario/crearEvento', [AdminEventosController::class, 'crear'])->name('admin.calendario.crearEvento');
 
 
     Route::post('/admin/profile/update', [AdminProfileController::class, 'updateProfile'])->name('admin.profile.update');
     Route::post('/admin/profile/update/password', [AdminProfileController::class, 'updatePassword'])->name('admin.password.update');
 
 });
-/*
 
-Route::middleware(['auth', 'role:vendor'])->group(function () {
-    Route::get('/vendor/dashboard', [VendorController::class, 'dashboard'])->name('vendor.dashboard');
+
+
+Route::middleware(['auth', 'role:profesor'])->group(function () {
+    Route::get('/profesor/dashboard', [AdminController::class, 'dashboard'])->name('profesor.dashboard');
 });
 
-
+/*
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
 });

@@ -7,41 +7,58 @@
         <a href="index.html">St</a>
       </div>
       <ul class="sidebar-menu">
-
         <li class="menu-header">Dashboard</li>
-        
+      @auth
+      @if (Auth::user()->role === 'admin')
+        <li class="dropdown active">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Actividad</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="{{route('admin.calendario')}}">Listar y Crear Actividad</a></li>
+          </ul>
+        </li> 
+
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Comunicado</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="{{route('admin.calendario')}}">Listar</a></li>
+            <li><a class="nav-link" href="{{route('admin.publicacion')}}">Crear Comunicado</a></li>
+          </ul>
+        </li> 
+
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Usuario</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="{{route('admin.calendario')}}">Listar</a></li>
+            <li><a class="nav-link" href="{{route('admin.calendario')}}">Crear</a></li>
+          </ul>
+        </li> 
+        @elseif (Auth::user()->role === 'profesor')
         <li class="dropdown active">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestión Académica</span></a>
           <ul class="dropdown-menu">
             <li class=active><a class="nav-link" href="{{route('admin.tarea')}}">Tareas</a></li>
             <li><a class="nav-link" href="{{route('admin.actividad')}}">Actividades</a></li>
             <li><a class="nav-link" href="{{route('admin.publicacion')}}">Publicaciones</a></li>
-            <li><a class="nav-link" href="{{route('admin.actividad')}}">Comentarios y Consultas</a></li>
-            <li><a class="nav-link" href="admin.calendario">Calendario Escolar</a></li>
-            <li><a class="nav-link" href="{{route('admin.actividad')}}">Comunicados y Avisos</a></li>
+            <li><a class="nav-link" href="{{route('admin.calendario')}}">Calendario Escolar</a></li>
           </ul>
-        </li>
-
-        <li class="dropdown active">
-          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Seguimientos y Reportes</span></a>
-          <ul class="dropdown-menu">
-            <li class=active><a class="nav-link" href="{{route('admin.tarea')}}">Comunicados</a></li>
-            <li><a class="nav-link" href="{{route('admin.actividad')}}">Actividades</a></li>
-            <li><a class="nav-link" href="{{route('admin.actividad')}}">Tareas</a></li>
-          </ul>
-        </li>
-
-        <li class="menu-header">Starter</li>
-        <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
-          <ul class="dropdown-menu">
-            <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
-            <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-            <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
-          </ul>
-        </li>
-
-        <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
+        </li> 
+        @endif
+    @endauth
 
     </aside>
   </div>
+
+
+     {{-- 
+      <li class="dropdown active">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestión Académica</span></a>
+          <ul class="dropdown-menu">
+            <li class=active><a class="nav-link" href="{{route('admin.tarea')}}">Tareas</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Actividades</a></li>
+            <li><a class="nav-link" href="{{route('admin.publicacion')}}">Publicaciones</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Comentarios y Consultas</a></li>
+            <li><a class="nav-link" href="{{route('admin.calendario')}}">Calendario Escolar</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Comunicados y Avisos</a></li>
+          </ul>
+        </li> 
+        --}}
