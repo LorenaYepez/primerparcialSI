@@ -15,6 +15,12 @@ class AdminUsuarioController extends Controller
                 return view("admin.usuario.index",["usuarios"=>$usuario]);
    }
 
+   public function vistacrear(){
+    $usuario = DB::table("users")
+                 ->select("*")
+                 ->get();
+                return view("admin.usuario.index",["usuarios"=>$usuario]);
+ }
 
 public function crear(Request $request)
 {

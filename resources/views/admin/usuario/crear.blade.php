@@ -15,7 +15,7 @@
           
             <div class="card-body">
               <h4>Crear Nueva Usuario</h4>
-              <form method="POST" class="needs-validation" novalidate="" action="/admin/usuario/crear">
+              <form method="POST" class="needs-validation" novalidate="" action="/admin/usuario/crearUsuario">
                 @csrf
                <!-- Nombre -->
               <div class="form-group row mb-4">

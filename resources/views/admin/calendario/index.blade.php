@@ -89,8 +89,8 @@
                         title: '{{ $eventos->Titulo }}',
                         start: '{{ $eventos->FechaInicio }}',
                         end: '{{ $eventos->FechaFin }}',
-                        backgroundColor: "#ffc107",
-                        borderColor: "#ffc107",
+                        backgroundColor: "{{ $eventos->Color }}",
+                        borderColor: "{{ $eventos->Color }}",
                         textColor: '#fff'
                     },
                 @endforeach

@@ -29,7 +29,7 @@
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Usuario</span></a>
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{route('admin.usuario')}}">Listar</a></li>
-            <li><a class="nav-link" href="{{route('admin.usuario.crear')}}">Crear</a></li>
+            <li><a class="nav-link" href="#">Crear</a></li>
           </ul>
         </li> 
         @elseif (Auth::user()->role === 'profesor')
@@ -59,6 +59,16 @@
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Tarea</span></a>
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{route('admin.tarea')}}">Ver Tareas</a></li>
+          </ul>
+        </li> 
+        @elseif (Auth::user()->role === 'user')
+        <li class="dropdown active">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestión Académica</span></a>
+          <ul class="dropdown-menu">
+            <li class=active><a class="nav-link" href="{{route('admin.tarea')}}">Tareas</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Actividades</a></li>
+            <li><a class="nav-link" href="{{route('admin.publicacion')}}">Publicaciones</a></li>
+            <li><a class="nav-link" href="{{route('admin.calendario')}}">Calendario Escolar</a></li>
           </ul>
         </li> 
         @endif

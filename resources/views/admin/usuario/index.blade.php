@@ -16,7 +16,7 @@
               <div class="table-responsive">
                
                   <div class="card-footer text-right">
-                    <a class="btn btn-primary"  href="/admin/usuario/crear">Crear Usuario </a>
+                    <a class="btn btn-primary"  href="/admin/usuario/vistacrear">Crear Usuario </a>
                   </div>
                
                 <table class="table table-bordered table-md">
