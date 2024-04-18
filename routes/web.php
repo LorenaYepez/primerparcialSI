@@ -79,7 +79,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/calendario/crearEvento', [AdminEventosController::class, 'crear'])->name('admin.calendario.crearEvento');
     
     Route::get('/admin/usuario', [AdminUsuarioController::class, 'index'])->name('admin.usuario');
-    Route::get('/admin/usuario/vistacrear', [AdminUsuarioController::class, 'vistacrear'])->name('admin.usuario.crear');
     Route::post('/admin/usuario/crearUsuario', [AdminUsuarioController::class, 'crear'])->name('admin.usuario.crearUsuario');
 
     Route::post('/admin/profile/update', [AdminProfileController::class, 'updateProfile'])->name('admin.profile.update');
