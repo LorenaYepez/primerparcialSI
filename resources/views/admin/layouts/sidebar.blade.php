@@ -13,7 +13,7 @@
         <li class="dropdown active">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Actividad</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="{{route('admin.calendario')}}">Listar y Crear Actividad</a></li>
+            <li><a class="nav-link" href="{{route('admin.actividad')}}">Listar y Crear Actividad</a></li>
           </ul>
         </li> 
 
@@ -29,7 +29,7 @@
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-folder"></i><span>Gestinar Usuario</span></a>
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{route('admin.usuario')}}">Listar</a></li>
-            <li><a class="nav-link" href="#">Crear</a></li>
+            <li><a class="nav-link" href="/admin/usuario/vistacrearusuario">Crear</a></li>
           </ul>
         </li> 
         @elseif (Auth::user()->role === 'profesor')
