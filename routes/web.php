@@ -27,15 +27,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-
-
-
-
-//Route::get('/admin/tarea', [AdminTareaController::class, 'index'])->name('admin.tarea');
-
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -97,26 +88,16 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 });
 
-
-
 Route::middleware(['auth', 'role:profesor'])->group(function () {
     Route::get('/profesor/dashboard', [AdminController::class, 'dashboard'])->name('profesor.dashboard');
 });
-
 
 Route::middleware(['auth', 'role:padre'])->group(function () {
     Route::get('/padre/dashboard', [AdminController::class, 'dashboard'])->name('padre.dashboard');
 });
 
-
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user/dashboard', [AdminController::class, 'dashboard'])->name('user.dashboard');
 });
-
-/*
-Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
-});
-*/
 
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
