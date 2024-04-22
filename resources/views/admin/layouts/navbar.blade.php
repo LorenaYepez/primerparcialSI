@@ -194,7 +194,18 @@
         </div>
       </li>
       <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-        <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+        @auth
+        @if (Auth::user()->role === 'admin')
+        <img alt="image" src="{{asset('backend/assets/img/avatar/avatar-1.png')}}" class="rounded-circle mr-1">
+        @elseif (Auth::user()->role === 'profesor')
+        <img alt="image" src="{{asset('backend/assets/img/avatar/avatar-2.png')}}" class="rounded-circle mr-1">
+        @elseif (Auth::user()->role === 'padre')
+        <img alt="image" src="{{asset('backend/assets/img/avatar/avatar-3.png')}}" class="rounded-circle mr-1">
+        @elseif (Auth::user()->role === 'user')
+        <img alt="image" src="{{asset('backend/assets/img/avatar/avatar-4.png')}}" class="rounded-circle mr-1">
+        @endif
+        @endauth
+        
         <div class="d-sm-none d-lg-inline-block">{{Auth::user()->name}}</div></a>
         <div class="dropdown-menu dropdown-menu-right">
           <div class="dropdown-title">Logged in 5 min ago</div>
