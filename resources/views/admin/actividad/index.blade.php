@@ -11,7 +11,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.profile') }}"><i class="fas fa-user"></i> Editar Perfil</a>
                 </li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.actividad') }}"><i class="fas fa-file"></i> Actividad</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.actividad') }}"><i class="fas fa-file"></i>
+                        Actividad</a> </li>
             </ul>
         </div>
         <div class="section-body">

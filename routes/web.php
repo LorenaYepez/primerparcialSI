@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\AdminComunicadoController;
 use App\Http\Controllers\Backend\AdminUsuarioController;
 use App\Http\Controllers\Backend\AdminPublicacionController;
 use App\Http\Controllers\Backend\AdminEventosController;
+use App\Http\Controllers\Backend\AdminMateriaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -83,6 +84,13 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/usuario/crearUsuario', [AdminUsuarioController::class, 'crear'])->name('admin.usuario.crearUsuario');
     Route::get('/admin/usuario/vistaeditar/{id}', [AdminUsuarioController::class, 'vistaeditar'])->name('admin.usuario.crear');
     Route::post('/admin/usuario/editar', [AdminUsuarioController::class, 'editar'])->name('admin.usuario.editar');
+
+
+    Route::get('/admin/materia', [AdminMateriaController::class, 'index'])->name('admin.materia');
+    Route::get('/admin/materia/vistacrear', [AdminMateriaController::class, 'vistacrear'])->name('admin.materia.crear');
+    Route::post('/admin/materia/crear', [AdminMateriaController::class, 'crear'])->name('admin.materia.crear');
+    Route::get('/admin/materia/vistaeditar/{id}', [AdminMateriaController::class, 'vistaeditar'])->name('admin.materia.crear');
+    Route::post('/admin/materia/editar', [AdminMateriaController::class, 'editar'])->name('admin.materia.editar');
 
     Route::post('/admin/profile/update', [AdminProfileController::class, 'updateProfile'])->name('admin.profile.update');
     Route::post('/admin/profile/update/password', [AdminProfileController::class, 'updatePassword'])->name('admin.password.update');

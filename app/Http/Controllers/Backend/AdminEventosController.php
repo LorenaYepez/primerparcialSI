@@ -49,6 +49,7 @@ class AdminEventosController extends Controller
            "Descripcion" => $request->input("descripcion"),
            "FechaInicio" => $request->input("fechainicio"),
            "FechaFin" => $request->input("fechafin"),
+           "Color" => $request->input("colores"),
            "IdCalendario" => $tipo,
        ]);
     //    Mostrar un mensaje de éxito o redirigir a otra página
