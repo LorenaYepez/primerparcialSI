@@ -9,6 +9,20 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
+         <!-- Rol -->
+         <div>
+            <x-input-label for="role" :value="__('Rol')" />
+            <select id="role" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-500 focus:ring-indigo-500" name="role" required autofocus>
+              <option value="">Selecciona un rol</option>
+              <option value="admin">Administrador</option>
+              <option value="profesor">Profesor</option>
+              <option value="padre">Padre</option>
+              <option value="user">Estudiante</option>
+            </select>
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+          </div>
+          
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
