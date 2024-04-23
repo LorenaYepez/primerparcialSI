@@ -42,8 +42,7 @@ class AdminActividadController extends Controller
     $materia = DB::table("materias")->get();
 
     return view("admin.actividad.editar",["actividad"=>$actividad  ,"materias"=>$materia]);
-    
-}
+    }
 
  public function editar(Request $request){
        // Actualizar la tarea

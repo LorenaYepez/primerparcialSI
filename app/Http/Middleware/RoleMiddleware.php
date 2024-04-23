@@ -21,13 +21,13 @@ class RoleMiddleware
         //     return redirect()->route('admin/dashboard');
         // }
         // return $next($request);
-        if ($request->user()->role !== $role) {
+        if ($request->user()->role === $role) {
             // Authorized user, let them access the route
             return $next($request);
         }
         // Unauthorized user, redirect to a specific route (e.g., login)
-        return redirect()->route('admin/dashboard'); // Replace with your desired route
-    
+        //return redirect()->route('admin/dashboard'); // Replace with your desired route
+        return $next($request);
 
 
     }

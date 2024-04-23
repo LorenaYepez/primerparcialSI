@@ -66,7 +66,7 @@
                       @endswitch
                   </td>
                     
-                    <td><a href="/admin/tarea/vistaeditar/{{ $tarea->IdTarea}}" class="btn btn-secondary">Editar</a></td>
+                    <td><a href="/admin/tarea/vistaeditar/{{ $tarea->IdTarea}}" class="btn btn-icon icon-left btn-warning"><i class="far fa-edit"></i>Editar</a></td>
                   </tr>
                   @endforeach
                 </table>

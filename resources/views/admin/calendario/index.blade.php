@@ -63,9 +63,20 @@
                   <label for="fechaFin" class="form-label">Fecha de fin</label>
                   <input type="date"  name="fechafin"class="form-control" id="fechaFin">
                 </div>
-        
-             
+
+                <div class="mb-3">
+                  <label for="colores" class="form-label">Colores</label>
+                  <select class="form-control form-control" id="colores" name="colores" multiple>
+                    <option value="#007bff">Azul</option>
+                    <option value="#ffc107">Naranaja</option>
+                    <option value="#00FF00">Verde</option>
+                    <option value="#F8BB86">Rosa</option>
+                    <option value="#CC99FF">Violeta</option>
+                  </select>
+                </div>
                   <button type="submit" class="btn btn-primary">Guardar</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
               </form>
             </div>
           </div>
@@ -89,8 +100,8 @@
                         title: '{{ $eventos->Titulo }}',
                         start: '{{ $eventos->FechaInicio }}',
                         end: '{{ $eventos->FechaFin }}',
-                        backgroundColor: "#ffc107",
-                        borderColor: "#ffc107",
+                        backgroundColor: "{{ $eventos->Color }}",
+                        borderColor: "{{ $eventos->Color }}",
                         textColor: '#fff'
                     },
                 @endforeach
