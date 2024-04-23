@@ -12,11 +12,14 @@ class AdminController extends Controller
     public function dashboard() {
         $user = Auth::user();
         $rolUsuario = "";
-        if($user->role=="admin"){
-            $rolUsuario="ADMIN";
-        }else{
-            $rolUsuario="PROFESOR";
-        }
+        
+    if ($user->role == "admin") {
+        $rolUsuario = "ADMIN";
+    } else if ($user->role == "profesor") {
+        $rolUsuario = "PROFESOR";
+    } else {
+        $rolUsuario = "ALUMNO";
+    }
         return view("admin.dashboard");
     }
 

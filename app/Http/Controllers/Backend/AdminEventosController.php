@@ -14,11 +14,16 @@ class AdminEventosController extends Controller
         // ->get());
         $user = Auth::user();
         $tipo = 0;
-        if($user->role=="admin"){
-            $tipo=1;
-        }else{
-            $tipo=2;
-        }
+        if ($user->role == "admin") {
+            $tipo = 1;
+          } else if ($user->role == "profesor") {
+            $tipo = 2;
+          } else {
+            $evento = DB::table("eventos")
+                ->select("*")
+                ->get();
+                return view("admin.calendario.index",["Eventos"=>$evento]);// This else block now handles all other roles
+          }          
             $evento = DB::table("eventos")
                 ->select("*")
                 ->where('IdCalendario', $tipo) 
@@ -44,6 +49,7 @@ class AdminEventosController extends Controller
            "Descripcion" => $request->input("descripcion"),
            "FechaInicio" => $request->input("fechainicio"),
            "FechaFin" => $request->input("fechafin"),
+           "Color" => $request->input("colores"),
            "IdCalendario" => $tipo,
        ]);
     //    Mostrar un mensaje de éxito o redirigir a otra página

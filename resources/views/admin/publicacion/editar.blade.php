@@ -75,7 +75,7 @@
                                         <label
                                             class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Descripcion</label>
                                         <div class="col-sm-12 col-md-7">
-                                            <textarea name="descripcion" class="summernote-simple">{{ $notificacion->Descripcion }}</textarea>
+                                            <textarea name="descripcion" class="summernote">{{ $notificacion->Descripcion }}</textarea>
 
                                         </div>
                                     </div>
